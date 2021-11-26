@@ -29,13 +29,10 @@ Below a snippet of the dataset
 
 For the application, only *Target* and *Text* colums are needed.
 
-The cluster is developed with 3 virtual machines: 1 **MasterNode** (it running Namenode e *inserire qui alrti processi* processes and submit the spark application)* and 2 **WorkerNode** (runnning tasks and *inserire altri processi qui*). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
+The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.3: 1 **MasterNode** (it running Namenode e *inserire qui alrti processi* processes and submit the spark application)* and 2 **WorkerNode** (runnning tasks and *inserire altri processi qui*). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
 
 
-
-
-
-# SetUp cluster
+# Cluster setup
 
 ## Requirements
 - [Apache Spark 3.0.3](https://spark.apache.org/releases/spark-release-3-0-3.html)
@@ -43,10 +40,58 @@ The cluster is developed with 3 virtual machines: 1 **MasterNode** (it running N
 - [Apache MLlib](https://spark.apache.org/mllib/)
 - Java 8 (We know, it's weird use Java for an ML task :-) )
 
+## setup HDFS cluster
+first of all, it's recommended create a new user on the O.S. for build up the cluster.
+The first step is settingUp Secure SHell (ssh) on all machines to permit to Master and WorkerNode the passwordlesses access.
 
+Execute this commands separately:
+```bash
+sudo apt install ssh
+sudo apt install pdsh
+nano .bashrc
+export PDSH_RCMD_TYPE=ssh
+ssh-keygen -t rsa -P ""
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+In the end, if everything gone well, ``` ssh localhost``` working without password request.
 
+Next, java and hadoop must be installed. After, add to file ```(path to your hadoop installation, is recomended to move folders in /usr/local directory)/etc/hadoop/hadoop-env.sh``` the following variable:
 
+```bash 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/```
 
+then add the following config to ```/etc/enviroment```:
+```bash
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/hadoop/bin:/usr/local/hadoop/sbin"JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
+```
 
+### Network setup
+Open file "hosts" and insert on each machine the ip address and the Hostname of the other machine, like this:
+```bash
+xxx.xxx.xxx.xxx MasterNode
+xxx.xxx.xxx.xxx WorkerNode
+xxx.xxx.xxx.xxx WorkerNode
+```
 
+in this snippet, we assumed that the machines's hostnames are MasterNode, WorkerNode and WorkerNode2. For change the hostname go to file ```etc/hostname``` and change the name.
 
+After that, we need to distribute between all nodes of cluster a *public-key* for ssh access. On the machine "master" execute:
+
+```bash
+ssh-keygen -t rsa
+ssh-copy-id hadoopuser@hadoop-master
+ssh-copy-id hadoopuser@hadoop-slave1
+ssh-copy-id hadoopuser@hadoop-slave2
+```
+**PAY ATTENTION: change hadoopuser with right user of machine and hadoop-* with correct hostnames!!**
+
+### Configure HDFS
+
+On the master node, open file ```path-to-hadoop/etc/hadoop/core-site.xml``` and add the following configuration:
+```xml
+<configuration>
+   <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://hadoop-master:9000</value>
+  </property>
+</configuration>
