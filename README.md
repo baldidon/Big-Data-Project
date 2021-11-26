@@ -88,10 +88,84 @@ ssh-copy-id hadoopuser@hadoop-slave2
 ### Configure HDFS
 
 On the master node, open file ```path-to-hadoop/etc/hadoop/core-site.xml``` and add the following configuration:
+
 ```xml
 <configuration>
    <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://hadoop-master:9000</value>
+    <value>hdfs://MasterNode:9000</value>
+      <!-- change MasterNode with correct hostname -->
   </property>
 </configuration>
+
+Still oh master node, open  ```path-to-hadoop/etc/hadoop/hdfs-site.xml``` and add:
+
+```xml
+<configuration>
+   <property>
+      <name>dfs.namenode.name.dir</name><value>path-to-hadoop/data/nameNode</value>
+   </property>
+   <property>
+      <name>dfs.datanode.data.dir</name><value>path-to-hadoop/data/dataNode</value>
+   </property>
+   <property>
+      <name>dfs.replication</name>
+      <value>2</value>
+   </property>
+</configuration>
+```
+
+then open ```path-to-hadoop/etc/hadoop/workers``` and add Hostnames of workers:
+
+```text
+WorkerNode1
+WorkerNode2
+```
+
+We need to copy theese configs on workers, execute:
+
+```
+scp path-to-hadoop/etc/hadoop/* (worker hostname):path-to-hadoop/etc/hadoop/
+scp path-to-hadoop/etc/hadoop/* (worker hostname):path-to-hadoop/etc/hadoop/
+```
+
+After all, next step is format the HDFS fs! Run:
+
+```
+source /etc/environment
+hdfs namenode -format
+```
+and then
+
+```
+start-dfs.sh
+```
+
+after this procedure, on the workers execute ```jps``` and if is present **Datanode** process, everything gone well!.
+Open ```https://ip-master:9870``` to open HDFS web panel.
+
+### YARN setup
+On master, execute:
+
+```
+export HADOOP_HOME="path-to-hadoop"
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_YARN_HOME=$HADOOP_HOME
+```
+
+Next, open on both worker nodes (not on master) ``` $HADOOP_HOME/yarn_site.xml ``` and paste between <configuration> tags:
+```xml
+   <property>
+      <name>yarn.resourcemanager.hostname</name>
+      <value>MasterNode</value>
+   </property>
+```
+Finally, the next step is launch yarn on master, with:
+```
+   start-yarn.sh
+```
+and after open ```https://master-ip:8088/cluster``` to se hadoop web panel!
+
