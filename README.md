@@ -83,7 +83,7 @@ ssh-copy-id hadoopuser@hadoop-master
 ssh-copy-id hadoopuser@hadoop-slave1
 ssh-copy-id hadoopuser@hadoop-slave2
 ```
-**PAY ATTENTION: change hadoopuser with right user of machine and hadoop-* with correct hostnames!!**
+**PAY ATTENTION: change hadoopuser with right user of machine and hadoop-# with correct hostnames!!**
 
 ### Configure HDFS
 
