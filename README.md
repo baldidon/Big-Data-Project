@@ -97,7 +97,7 @@ On the master node, open file ```path-to-hadoop/etc/hadoop/core-site.xml``` and 
       <!-- change MasterNode with correct hostname -->
   </property>
 </configuration>
-
+```
 Still oh master node, open  ```path-to-hadoop/etc/hadoop/hdfs-site.xml``` and add:
 
 ```xml
