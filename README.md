@@ -29,8 +29,14 @@ Below a snippet of the dataset
 
 For the application, only *Target* and *Text* colums are needed.
 
+The cluster is developed with 3 virtual machines: 1 **MasterNode** (it running Namenode e *inserire qui alrti processi* processes and submit the spark application)* and 2 **WorkerNode** (runnning tasks and *inserire altri processi qui*). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
+
+
+
+
 
 # SetUp cluster
+
 ## Requirements
 - [Apache Spark 3.0.3](https://spark.apache.org/releases/spark-release-3-0-3.html)
 - [Apache Hadoop 3.2.2](https://hadoop.apache.org/docs/r3.2.2/)
