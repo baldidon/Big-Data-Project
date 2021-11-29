@@ -20,7 +20,7 @@ Below a snippet of the dataset
 |0|"1467811184"|"Mon Apr 06 22:19:57 PDT 2009"|"NO_QUERY"|"ElleCTF"|"my whole body feels itchy and like its on fire "										|
 -->
 
-* target: the polarity of the tweet (0 = negative, 1 = positive)
+* target: the sentiment of the tweet (0 = negative, 1 = positive)
 * ids: The id of the tweet ( 2087)
 * date: the date of the tweet (Sat May 16 23:58:44 UTC 2009)
 * flag: The query (lyx). If there is no query, then this value is NO_QUERY.
