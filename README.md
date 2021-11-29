@@ -4,7 +4,7 @@ A spark-based application for tweet's *sentiment analysis*, running inside an Ha
 
 # Project Goals
 With this project, we wanted to explore usage some of the most popular softwares for *Big Data managment*. 
-In detail, we've used **Apache Hadoop** for build-up a 3-node cluster (**with HDFS as FS**) and we use **Apache Spark** above them whith MLlib, a Spark library for design machine learning's models.
+In detail, we've used **Apache Hadoop** for build-up a 3-node cluster (**with HDFS as FS**) and we use **Apache Spark** above them whith **MLlib**, a Spark library for design machine learning's models.
 For task (*given a tweet/phrase, choose if it's a positive or negative comment*), we've choose to use **Naive Bayes classifier**: the perfect trade off between simplicity and performance. Thanks by a
 simple (and quite incorrect for documents) hypotesis: the features (in this case words) of a sample (in this case a text/tweet) are *independent random variables*.  Altough in a text words might be correlated, this
 model provide good performance!
