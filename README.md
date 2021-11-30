@@ -2,10 +2,10 @@
 
 A spark-based application for tweet's *sentiment analysis*, running inside an Hadoop cluster
 
-# Intentions
+# Project Goals
 With this project, we wanted to explore usage some of the most popular softwares for *Big Data managment*. 
-In detail, we've used **Apache Hadoop** for build-up a 3-node cluster (**with HDFS as FS**) and we use **Apache Spark** above them whith MLlib, a Spark library for design machine learning's models.
-For task (*given a tweet/phrase, choose if it's a positive or negative comment*), we've choose to use **Naive Bayes classifer**: the perfect trade off between simplicity and performance. Thanks by a
+In detail, we've used **Apache Hadoop** for build-up a 3-node cluster (**with HDFS as FS**) and we use **Apache Spark** above them whith **MLlib**, a Spark library for design machine learning's models.
+For task (*given a tweet/phrase, choose if it's a positive or negative comment*), we've choose to use **Naive Bayes classifier**: the perfect trade off between simplicity and performance. Thanks by a
 simple (and quite incorrect for documents) hypotesis: the features (in this case words) of a sample (in this case a text/tweet) are *independent random variables*.  Altough in a text words might be correlated, this
 model provide good performance!
 
@@ -20,7 +20,7 @@ Below a snippet of the dataset
 |0|"1467811184"|"Mon Apr 06 22:19:57 PDT 2009"|"NO_QUERY"|"ElleCTF"|"my whole body feels itchy and like its on fire "										|
 -->
 
-* target: the polarity of the tweet (0 = negative, 1 = positive)
+* target: the sentiment of the tweet (0 = negative, 1 = positive)
 * ids: The id of the tweet ( 2087)
 * date: the date of the tweet (Sat May 16 23:58:44 UTC 2009)
 * flag: The query (lyx). If there is no query, then this value is NO_QUERY.
@@ -83,7 +83,7 @@ ssh-copy-id hadoopuser@hadoop-master
 ssh-copy-id hadoopuser@hadoop-slave1
 ssh-copy-id hadoopuser@hadoop-slave2
 ```
-**PAY ATTENTION: change hadoopuser with right user of machine and hadoop-* with correct hostnames!!**
+**PAY ATTENTION: change hadoopuser with right user of machine and hadoop-# with correct hostnames!!**
 
 ### Configure HDFS
 
@@ -97,8 +97,8 @@ On the master node, open file ```path-to-hadoop/etc/hadoop/core-site.xml``` and 
       <!-- change MasterNode with correct hostname -->
   </property>
 </configuration>
-
-Still oh master node, open  ```path-to-hadoop/etc/hadoop/hdfs-site.xml``` and add:
+```
+Still on master node, open  ```path-to-hadoop/etc/hadoop/hdfs-site.xml``` and add:
 
 ```xml
 <configuration>
