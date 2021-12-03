@@ -2,6 +2,8 @@
 
 A spark-based application for tweet's *sentiment analysis*, running inside an Hadoop cluster
 
+**INSERIRE TABLE OF CONTENTS**
+
 # Project Goals
 With this project, we wanted to explore usage some of the most popular softwares for *Big Data managment*. 
 In detail, we've used **Apache Hadoop** for build-up a 3-node cluster (**with HDFS as FS**) and we use **Apache Spark** above them whith **MLlib**, a Spark library for design machine learning's models.
@@ -29,7 +31,7 @@ Below a snippet of the dataset
 
 For the application, only *Target* and *Text* colums are needed.
 
-The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.3: 1 **MasterNode** (it running Namenode e *inserire qui alrti processi* processes and submit the spark application)* and 2 **WorkerNode** (runnning tasks and *inserire altri processi qui*). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
+The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.3: 1 **MasterNode** (it running Namenode, SecondaryNamenode and ResourceManager  processes and submit the spark application)* and 2 **WorkerNode** (runnning tasks, Datanode and NodeManager processes). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
 
 
 # Cluster setup
@@ -58,7 +60,8 @@ In the end, if everything gone well, ``` ssh localhost``` working without passwo
 Next, java and hadoop must be installed. After, add to file ```(path to your hadoop installation, is recomended to move folders in /usr/local directory)/etc/hadoop/hadoop-env.sh``` the following variable:
 
 ```bash 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/```
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+```
 
 then add the following config to ```/etc/enviroment```:
 ```bash
