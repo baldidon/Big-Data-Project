@@ -5,7 +5,8 @@ A spark-based application for tweet's *sentiment analysis*, running inside an Ha
 ---
 #### Table Of Contents
 1. [Project Goals](https://github.com/baldidon/Big-Data-Project#project-goals-)
-2. [Cluster Setup](#Cluster setup)
+2. [Cluster Setup](https://github.com/baldidon/Big-Data-Project#cluster-setup)
+
 ---
 
 ## Project goals <a name="Project goals"/>
