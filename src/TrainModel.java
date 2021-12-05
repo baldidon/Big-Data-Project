@@ -88,15 +88,9 @@ public class TrainModel
 	    Dataset<Row> predictionTrain = nbModel.transform(weightedTrain);
 	    Dataset<Row> predictionTest = nbModel.transform(weightedTest);
 		nbModel.write().overwrite().save("hdfs://" + args[4]);
-	    
-		//debug tests
-		tokenizedTrain.show(10);
-		filteredTrainSet.show(10);
-		vectorizedTrain.show(10);
-		weightedTrain.show(10);
-		predictionTrain.show(10);
+	   
 		
-		//BINARY CLASSIFICATION EVALUATOR
+	    //BINARY CLASSIFICATION EVALUATOR
 	    BinaryClassificationEvaluator evaluator = new BinaryClassificationEvaluator()
 	    		.setLabelCol("label")
 	    		.setRawPredictionCol("prediction");
