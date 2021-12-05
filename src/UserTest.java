@@ -73,5 +73,6 @@ public class UserTest {
 			}catch(IOException e){
 			}
 		}while(!input.equals("Q"));
+		System.out.println("Closing application. See you soon!!);
 	}
 }
