@@ -47,7 +47,7 @@ The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.
 - [Apache MLlib](https://spark.apache.org/mllib/)
 - Java 8 (We know, it's weird use Java for an ML task :-) )
 
-## setup HDFS cluster
+## Setup HDFS cluster
 first of all, it's recommended create a new user on the O.S. for build up the cluster.
 The first step is settingUp Secure SHell (ssh) on all machines to permit to Master and WorkerNode the passwordlesses access.
 
