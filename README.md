@@ -5,8 +5,8 @@ A spark-based application for tweet's *sentiment analysis*, running inside an Ha
 ---
 #### Table Of Contents
 1. [Project Goals](https://github.com/baldidon/Big-Data-Project#project-goals-)
-2. [Cluster Setup](https://github.com/baldidon/Big-Data-Project#cluster-setup)
-
+2. [Cluster Setup](https://github.com/baldidon/Big-Data-Project#cluster-setup)   
+3. [Usage]()
 ---
 
 ## Project goals <a name="Project goals"/>
@@ -47,7 +47,7 @@ The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.
 - [Apache MLlib](https://spark.apache.org/mllib/)
 - Java 8 (We know, it's weird use Java for an ML task :-) )
 
-## Setup HDFS cluster
+## Setup Hadoop cluster
 first of all, it's recommended create a new user on the O.S. for build up the cluster.
 The first step is settingUp Secure SHell (ssh) on all machines to permit to Master and WorkerNode the passwordlesses access.
 
@@ -177,3 +177,4 @@ Finally, the next step is launch yarn on master, with:
 ```
 and after open ```https://master-ip:8088/cluster``` to se hadoop web panel!
 
+### Configure Apache Spark
