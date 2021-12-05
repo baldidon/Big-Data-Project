@@ -48,7 +48,7 @@ public class UserTest {
 			System.out.println("Insert a sentence (Q to quit)");
 			try {
 				input = bufferedReader.readLine();
-				if(!input.equals("Q") && !input.equals("")) {		//add other banned inputs
+				if(!input.equals("Q") && !input.equals("")) {
 					
 					List<Row> data = Arrays.asList(RowFactory.create(input));
 					StructType schema = new StructType(new StructField[]{
