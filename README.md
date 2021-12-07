@@ -30,7 +30,7 @@ Below a snippet of the dataset
 * target: the sentiment of the tweet (0 = negative, 1 = positive)
 * ids: The id of the tweet ( 2087)
 * date: the date of the tweet (Sat May 16 23:58:44 UTC 2009)
-* flag: The query (lyx). If there is no query, then this value is NO_QUERY.
+* flag: Used for lyx queries. Useless
 * user: the user that tweeted
 * text: the text of the tweet
 
