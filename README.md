@@ -178,3 +178,14 @@ Finally, the next step is launch yarn on master, with:
 and after open ```https://master-ip:8088/cluster``` to se hadoop web panel!
 
 ### Configure Apache Spark
+In this case, considering that spark will be only the "execution engine above hadoop", the setup is much simpler than hadoop setup. 
+First, download Spark, then add to ```bashrc``` the following variable (open with following command form home directory ```nano ./bashrc```):
+```bash
+   export PATH=$PATH:/absolute-path from root to spark folder/spark/bin
+```
+and then execute:
+```  
+source ~/.bashrc
+```
+   
+   
