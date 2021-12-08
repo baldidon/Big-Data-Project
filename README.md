@@ -178,14 +178,27 @@ Finally, the next step is launch yarn on master, with:
 and after open ```https://master-ip:8088/cluster``` to se hadoop web panel!
 
 ### Configure Apache Spark
+
 In this case, considering that spark will be only the "execution engine above hadoop", the setup is much simpler than hadoop setup. 
 First, download Spark, then add to ```bashrc``` the following variable (open with following command form home directory ```nano ./bashrc```):
+
 ```bash
-   export PATH=$PATH:/absolute-path from root to spark folder/spark/bin
+export PATH=$PATH:/absolute-path-from-root-to-spark-folder/spark/bin
 ```
-and then execute:
-```  
+
+and then execute, to refresh configuration:
+```bash
 source ~/.bashrc
 ```
-   
+---
+
+## Usage
+
+First of all, open the bin folder of this repo: there are two scripts and a jar file. The ```run-train.sh``` is a script for submitting the Training Application of classificator model and all transformation models (*necessary to make the data usable by the classifier*) to Hadoop. After training, application puts models into HDFS, so that the Training is executed once in a "lifetime".
+
+**Note that: other info about the workflow are described inside the /*inserire nome documento qui*/**
+
+After that, the ```run-test.sh``` script submit the test application; a command-line interaction where user can write sentences and retrive a prediction of sentiment!
+
+
    
