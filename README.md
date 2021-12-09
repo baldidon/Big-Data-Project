@@ -1,4 +1,4 @@
-# BigData-Project
+# Big Data Project
 
 A spark-based application for tweet's *sentiment analysis*, running inside an Hadoop cluster
 
