@@ -73,6 +73,7 @@ then add the following config to ```/etc/enviroment```:
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/hadoop/bin:/usr/local/hadoop/sbin"JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
 ```
 
+---
 ### Network setup
 Open file "hosts" and insert on each machine the ip address and the Hostname of the other machine, like this:
 ```bash
@@ -93,6 +94,7 @@ ssh-copy-id hadoopuser@hadoop-slave2
 ```
 **PAY ATTENTION: change hadoopuser with right user of machine and hadoop-# with correct hostnames!!**
 
+---
 ### Configure HDFS
 
 On the master node, open file ```path-to-hadoop/etc/hadoop/core-site.xml``` and add the following configuration:
@@ -158,6 +160,7 @@ start-dfs.sh
 after this procedure, on the workers execute ```jps``` and if is present **Datanode** process, everything gone well!.
 Open ```https://ip-master:9870``` to open HDFS web panel.
 
+---
 ### YARN setup
 On master, execute:
 
