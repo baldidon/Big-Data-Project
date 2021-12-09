@@ -1,26 +1,8 @@
 #!/bin/bash 
 
 
-rm -r /home/hadoopuser/esProf/output
+
 hdfs dfsadmin -safemode leave
-
-#hdfs dfs -rm -r dataset
-#hdfs dfs -rm -r models
-#hdfs dfs -rm -r models/stopWordModel
-#hdfs dfs -rm -r models/countVectorizerModel
-#hdfs dfs -rm -r models/idfModel
-#hdfs dfs -rm -r models/NaiveBayesModel
-#hdfs dfs -rm -r output
-
-
-#hdfs dfs -put /home/hadoopuser/esProf/dataset dataset
-#hdfs dfs -touch output
-
-#hdfs dfs -mkdir  models
-#hdfs dfs -mkdir  models/stopWordModel
-#hdfs dfs -mkdir  models/countVectorizerModel
-#hdfs dfs -mkdir  models/idfModel
-#hdfs dfs -mkdir  models/NaiveBayesModel
 
 
 /usr/local/spark/bin/spark-submit --class bigdataman.baldiberna.naive_bayes_project.UserTest --master yarn  --deploy-mode client \
