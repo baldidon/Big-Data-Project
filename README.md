@@ -190,15 +190,40 @@ and then execute, to refresh configuration:
 ```bash
 source ~/.bashrc
 ```
+
+Last step is to configure a variable inside ```spark-env.sh``` file, it defines the environment for Spark. So, change directory to *conf* folder, inside your spark installation and then:
+
+```bash
+cd /folder-to-Spark/conf/
+cp ./spark-env.sh.template  ./spark.env.sh
+
+nano ./spark-env.sh
+```
+
+inside *spark-env* just simply add an export, referred to ```$HADOOP_HOME```:
+
+```bash
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+```
+
+Done! Setup finished!
+
+
+
 ---
 
 ## Usage
 
 First of all, open the bin folder of this repo: there are two scripts and a jar file. The ```run-train.sh``` is a script for submitting the Training Application of classificator model and all transformation models (*necessary to make the data usable by the classifier*) to Hadoop. After training, application puts models into HDFS, so that the Training is executed once in a "lifetime".
 
-**Note that: other info about the workflow are described inside the /*inserire nome documento qui*/**
+**Note that: other info about the workflow are described inside the *Tesina Progetto* in docs folder**
 
-After that, the ```run-test.sh``` script submit the test application; a command-line interaction where user can write sentences and retrive a prediction of sentiment!
+After that, the ```run-test.sh``` script submit the test application; a command-line interaction where user can write sentences and retrive a prediction of sentiment (also with a verbose explanation about transformation applied to user input)!
+
+
+![alt text](img/shot.png)
+
+
 
 
    
