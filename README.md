@@ -129,6 +129,12 @@ then open ```path-to-hadoop/etc/hadoop/workers``` and add Hostnames of workers:
 WorkerNode1
 WorkerNode2
 ```
+Same thing for define hostname of masternode, inside  ```path-to-hadoop/etc/hadoop/master```:
+
+```text
+MasterNode
+``` 
+
 
 We need to copy theese configs on workers, execute:
 
