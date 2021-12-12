@@ -10,7 +10,7 @@ A spark-based application for tweet's *sentiment analysis*, running inside an Ha
 ---
 
 ## Project goals <a name="Project goals"/>
-With this project, we wanted to explore usage some of the most popular softwares for *Big Data managment*. 
+With this project, we wanted to explore usage some of the most popular softwares for *Big Data management*. 
 In detail, we've used **Apache Hadoop** for build-up a 3-node cluster (**with HDFS as FS**) and we use **Apache Spark** above them whith **MLlib**, a Spark library for design machine learning's models.
 For task (*given a tweet/phrase, choose if it's a positive or negative comment*), we've choose to use **Naive Bayes classifier**: the perfect trade off between simplicity and performance. Thanks by a
 simple (and quite incorrect for documents) hypotesis: the features (in this case words) of a sample (in this case a text/tweet) are *independent random variables*.  Altough in a text words might be correlated, this
@@ -225,7 +225,7 @@ Done! Setup finished!
 
 First of all, open the bin folder of this repo: there are two scripts and a jar file. The ```run-train.sh``` is a script for submitting the Training Application of classificator model and all transformation models (*necessary to make the data usable by the classifier*) to Hadoop. After training, application puts models into HDFS, so that the Training is executed once in a "lifetime".
 
-**Note that: other info about the workflow are described inside the [*Project's paper*](docs/Tesina%20progetto%20big%20data%20managment.pdf) inside docs folder**
+**Note that: other info about the workflow are described inside the [*Project's paper*](docs/Tesina%20progetto%20big%20data%20management.pdf) inside docs folder**
 
 After that, the ```run-test.sh``` script submit the test application; a command-line interaction where user can write sentences and retrive a prediction of sentiment (also with a verbose explanation about transformation applied to user input)!
 
