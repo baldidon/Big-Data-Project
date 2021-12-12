@@ -225,7 +225,7 @@ Done! Setup finished!
 
 First of all, open the bin folder of this repo: there are two scripts and a jar file. The ```run-train.sh``` is a script for submitting the Training Application of classificator model and all transformation models (*necessary to make the data usable by the classifier*) to Hadoop. After training, application puts models into HDFS, so that the Training is executed once in a "lifetime".
 
-**Note that: other info about the workflow are described inside the *Tesina Progetto* in docs folder**
+**Note that: other info about the workflow are described inside the [*Project's paper*](docs/Tesina%20progetto%20big%20data%20managment.pdf) inside docs folder**
 
 After that, the ```run-test.sh``` script submit the test application; a command-line interaction where user can write sentences and retrive a prediction of sentiment (also with a verbose explanation about transformation applied to user input)!
 
