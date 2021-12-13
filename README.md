@@ -48,7 +48,7 @@ The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.
 - Java 8 (We know, it's weird use Java for an ML task :-) )
 
 ## Setup Hadoop cluster
-first of all, it's recommended create a new user on the O.S. for build up the cluster.
+first of all, it's recommended create a new user on the OS for build up the cluster (in our case we defined 'hadoopuser' user) .
 The first step is settingUp Secure SHell (ssh) on all machines to permit to Master and WorkerNode the passwordlesses access.
 
 Execute this commands separately:
