@@ -90,7 +90,7 @@ xxx.xxx.xxx.xxx WorkerNode
 
 in this snippet, we assumed that the machines's hostnames are MasterNode, WorkerNode and WorkerNode2. For change the hostname go to file ```etc/hostname``` and change the name.
 
-After that, we need to distribute between all nodes of cluster a *public-key* for ssh access. On the machine "master" execute:
+After that, we need to distribute between all nodes of cluster a *public-key* for ssh access. On the machine "master" execute first the command for *generate* the key, then the commands for do a *secure-copy* inside all machines:
 
 ```bash
 ssh-keygen -t rsa
