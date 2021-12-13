@@ -75,7 +75,8 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 
 ---
 ### Network setup
-Open file "hosts" with sudo and insert on each machine the ip address and the Hostname of the other machine, like this:
+Open file ```/etc/hosts``` with sudo and insert on each machine the ip address and the Hostname of the other machine, like this:
+
 ```bash
 sudo nano /etc/hosts
 ```
