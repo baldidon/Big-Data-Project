@@ -167,7 +167,7 @@ after this procedure, on the workers execute ```jps``` and if is present **Datan
 Open ```https://ip-master:9870``` to open HDFS web panel.
 
 ---
-### YARN setup
+### Setup YARN
 On master, execute:
 
 ```
