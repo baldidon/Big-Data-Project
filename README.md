@@ -36,7 +36,7 @@ Below a snippet of the dataset
 
 For the application, only *Target* and *Text* colums are needed.
 
-The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.3: 1 **MasterNode** (it running Namenode, SecondaryNamenode and ResourceManager  processes and submit the spark application)* and 2 **WorkerNode** (runnning tasks, Datanode and NodeManager processes). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
+The cluster is developed with 3 virtual machines which are running Ubuntu 20.04.3: 1 **MasterNode** (it running Namenode, SecondaryNamenode and ResourceManager  processes and submit the spark application) and 2 **WorkerNode** (runnning tasks, Datanode and NodeManager processes). All 3 machines running on the same local network (sams subclass o private addresses), so the can communicate through local network and not over internet!
 
 
 # Cluster setup
@@ -75,8 +75,13 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 
 ---
 ### Network setup
-Open file "hosts" and insert on each machine the ip address and the Hostname of the other machine, like this:
+Open file "hosts" with sudo and insert on each machine the ip address and the Hostname of the other machine, like this:
 ```bash
+sudo nano /etc/hosts
+```
+
+```bash
+# ip address of machines and their hostnames
 xxx.xxx.xxx.xxx MasterNode
 xxx.xxx.xxx.xxx WorkerNode
 xxx.xxx.xxx.xxx WorkerNode
