@@ -28,6 +28,5 @@ hdfs dfs -mkdir  models
 
 
 # mkdir output
-
 # get accuracy model from hdfs
-hdfs dfs -get output /home/hadoopuser/output
+# hdfs dfs -get output /home/hadoopuser/output
