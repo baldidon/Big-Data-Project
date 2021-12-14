@@ -94,11 +94,11 @@ After that, we need to distribute between all nodes of cluster a *public-key* fo
 
 ```bash
 ssh-keygen -t rsa
-ssh-copy-id hadoopuser@hadoop-master
-ssh-copy-id hadoopuser@hadoop-slave1
-ssh-copy-id hadoopuser@hadoop-slave2
+ssh-copy-id hadoopuser@MasterNode
+ssh-copy-id hadoopuser@WorkerNode
+ssh-copy-id hadoopuser@WorkerNode2
 ```
-**PAY ATTENTION: change hadoopuser with right user of machine and hadoop-# with correct hostnames!!**
+**PAY ATTENTION: change hadoopuser with right user of machine and the values after "@" with correct hostnames!!**
 
 ---
 ### Configure HDFS
