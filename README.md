@@ -236,7 +236,7 @@ First of all, open the bin folder of this repo: there are two scripts and a jar 
 After that, the ```run-test.sh``` script submit the test application; a command-line interaction where user can write sentences and retrive a prediction of sentiment (also with a verbose explanation about transformation applied to user input)!
 
 
-![alt text](img/shot.png)
+![ciao](img/shot.png)
 
 
 
