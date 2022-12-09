@@ -160,7 +160,14 @@ hdfs namenode -format
 and then
 
 ```
-start-dfs.sh
+export HADOOP_HOME="path-to-hadoop"
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_YARN_HOME=$HADOOP_HOME
+
+$HADOOP_HOME/sbin/start-dfs.sh
 ```
 
 after this procedure, on the workers execute ```jps``` and if is present **Datanode** process, everything gone well!.
@@ -179,7 +186,7 @@ export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_YARN_HOME=$HADOOP_HOME
 ```
 
-Next, open on both worker nodes (not on master) ``` $HADOOP_HOME/yarn_site.xml ``` and paste between <configuration> tags:
+Next, open on both worker nodes (not on master) ``` $HADOOP_HOME/etc/hadoop/yarn_site.xml ``` and paste between <configuration> tags:
 ```xml
    <property>
       <name>yarn.resourcemanager.hostname</name>
