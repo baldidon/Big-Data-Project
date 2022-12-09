@@ -134,7 +134,7 @@ Still on master node, open  ```path-to-hadoop/etc/hadoop/hdfs-site.xml``` and ad
 then open ```path-to-hadoop/etc/hadoop/workers``` and add Hostnames of workers:
 
 ```text
-WorkerNode1
+WorkerNode
 WorkerNode2
 ```
 Same thing for define hostname of masternode, inside  ```path-to-hadoop/etc/hadoop/master```:
