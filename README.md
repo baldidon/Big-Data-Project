@@ -85,7 +85,7 @@ sudo nano /etc/hosts
 # ip address of machines and their hostnames
 xxx.xxx.xxx.xxx MasterNode
 xxx.xxx.xxx.xxx WorkerNode
-xxx.xxx.xxx.xxx WorkerNode
+xxx.xxx.xxx.xxx WorkerNode2
 ```
 
 in this snippet, we assumed that the machines's hostnames are MasterNode, WorkerNode and WorkerNode2. For change the hostname go to file ```etc/hostname``` and change the name.
